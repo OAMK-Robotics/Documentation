@@ -18,3 +18,5 @@ This is the initial flow chart we came up with for the project:
 [Flow chart robotics project.pdf](https://github.com/user-attachments/files/34419207/Flow.chart.robotics.project.pdf)
 
 With this flow chart we had a rough idea of what we wanted the project to be able to do, but we did not have the technical specifics yet.
+
+## Technical specifications
