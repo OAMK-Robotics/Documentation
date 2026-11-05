@@ -23,6 +23,11 @@ With this flow chart we had a rough idea of what we wanted the project to be abl
 
 ## Daily meetings
 
+Meeting on 05.11.2026:
+
+[Daily documentation 05.11.pdf](https://github.com/user-attachments/files/34420031/Daily.documentation.05.11.pdf)
+
+
 ## Individual robot functionalities
 
 ### UR
