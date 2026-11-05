@@ -20,3 +20,15 @@ This is the initial flow chart we came up with for the project:
 With this flow chart we had a rough idea of what we wanted the project to be able to do, but we did not have the technical specifics yet.
 
 ## Technical specifications
+
+## Daily meetings
+
+## Individual robot functionalities
+
+### UR
+
+### GoPiGo
+
+### NAO
+
+### Tello drone
