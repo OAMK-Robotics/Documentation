@@ -21,6 +21,11 @@ With this flow chart we had a rough idea of what we wanted the project to be abl
 
 ## Technical specifications
 
+All the robots will communicate through an MQTT broker which is connected to the ASUS router within the room. The topic structure, event topics and message schemes can be found in the document below.
+
+[mqtt_schema.pdf](https://github.com/user-attachments/files/34471134/mqtt_schema.pdf)
+
+
 ## Daily meetings and Sprint meetings
 
 Daily meeting on 05.11.2026:
