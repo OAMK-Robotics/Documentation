@@ -49,3 +49,11 @@ Daily meeting on 06.11.2026:
 ### NAO
 
 ### Tello drone
+
+The individual functionality of the Tello drone can be broken down into 2 main software components. The connection code, for the connection to the router and the detection code, for identifying the table that customers are sitting at.
+
+#### Connection Code
+
+In short this script configures the drone to leave its own WIFI and connect to the 2.4 GHZ ASUS router in the room. It does that by sending plain-text UDP commands to the drone’s SDK port, using the Tello SDK’s command and ap <ssid> <password> commands. The code can be found in the drone repository under tello_connect_router.py
+
+#### Detection Code
