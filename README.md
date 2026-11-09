@@ -79,3 +79,5 @@ The individual functionality of the Tello drone can be broken down into 2 main s
 In short this script configures the drone to leave its own WIFI and connect to the 2.4 GHZ ASUS router in the room. It does that by sending plain-text UDP commands to the drone’s SDK port, using the Tello SDK’s command and ap <ssid> <password> commands. The code can be found in the drone repository under tello_connect_router.py
 
 #### Detection Code
+
+The detection code is a Python application that controls the Tello drone on order to search for customers sitting at tables in the bar. It uses the drones mission pads to represent the tables, mission pad 1 is table 1 and mission pad 3 is table 2. It connects to the local MQTT broker and publishes a JSON event showing the table that is in use. After finding the specific table it ends its side to side search motion, returns to the center, retreats and lands. The specific code can be found in the drone repository under Drone table detection.py.
