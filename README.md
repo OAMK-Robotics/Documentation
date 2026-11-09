@@ -47,6 +47,11 @@ Sprint review 09.11.2026:
 [Sprint review 09.11.2026.pdf](https://github.com/user-attachments/files/34568503/Sprint.review.09.11.2026.pdf)
 
 ### Sprint plannings
+
+Sprint planning 09.11.2026:
+
+[Sprint planning 09.11.2026.pdf](https://github.com/user-attachments/files/34571655/Sprint.planning.09.11.2026.pdf)
+
 ## Individual robot functionalities
 
 ### UR
