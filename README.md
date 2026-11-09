@@ -2,6 +2,13 @@
 
 In this space we will be keeping all the documentation across the entire robotics project. 
 
+## The teams
+
+NAO: Antti, Kalle, Simon
+Drone: Amila, Josh
+GoPiGo: Annina, Ben, Boris
+UR: Samuel, Rasanjula, Ed
+
 ## First ideas and diagrams
 In our first meeting we were tasked with coming up with mind maps for the individual robots and their functionalities:
 
