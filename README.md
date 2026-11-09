@@ -31,6 +31,7 @@ All the robots will communicate through an MQTT broker which is connected to the
 
 ## Daily meetings and Sprint meetings
 
+### Daily meetings
 Daily meeting on 05.11.2026:
 
 [Daily documentation 05.11.pdf](https://github.com/user-attachments/files/34420031/Daily.documentation.05.11.pdf)
@@ -39,7 +40,13 @@ Daily meeting on 06.11.2026:
 
 [Daily documentation 06.11.pdf](https://github.com/user-attachments/files/34469637/Daily.documentation.06.11.pdf)
 
+### Sprint reviews
 
+Sprint review 09.11.2026:
+
+[Sprint review 09.11.2026.pdf](https://github.com/user-attachments/files/34568503/Sprint.review.09.11.2026.pdf)
+
+### Sprint plannings
 ## Individual robot functionalities
 
 ### UR
