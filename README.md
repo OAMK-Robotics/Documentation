@@ -5,8 +5,11 @@ In this space we will be keeping all the documentation across the entire robotic
 ## The teams
 
 NAO: Antti, Kalle, Simon
+
 Drone: Amila, Josh
+
 GoPiGo: Annina, Ben, Boris
+
 UR: Samuel, Rasanjula, Ed
 
 ## First ideas and diagrams
