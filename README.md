@@ -37,7 +37,11 @@ All the robots will communicate through an MQTT broker which is connected to the
 
 [mqtt_schema.pdf](https://github.com/user-attachments/files/34471134/mqtt_schema.pdf)
 
+### 3D Printing
 
+We used the Prusa CORE one+ to print our cups and our cup holder. Below you can find the schematics for both.
+
+<img width="942" height="945" alt="glass" src="https://github.com/user-attachments/assets/685459d1-b40d-4fc2-a51d-743164658f6f" />
 
 ## Daily meetings and Sprint meetings
 
