@@ -43,6 +43,10 @@ We used the Prusa CORE one+ to print our cups and our cup holder. Below you can 
 
 <img width="542" height="545" alt="glass" src="https://github.com/user-attachments/assets/685459d1-b40d-4fc2-a51d-743164658f6f" />
 
+### Software and code
+
+The main bulk of the software for the project is written in Python 3.13, this includes: the drone table detection, Nao's communication, the GoPiGo's navigation and all the communication with the MQTT broker. The movements of the UR are designed in its proprietary software but the connection with the rest of robots was established in python. Nao is an edge case because Nao's code is written in Python 2.7 but through a flask server the communication with Nao through Python 3.13 is made possible.
+
 ## Daily meetings and Sprint meetings
 
 ### Daily meetings
