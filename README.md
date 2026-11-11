@@ -98,3 +98,7 @@ In short this script configures the drone to leave its own WIFI and connect to t
 #### Detection Code
 
 The detection code is a Python application that controls the Tello drone on order to search for customers sitting at tables in the bar. It uses the drones mission pads to represent the tables, mission pad 1 is table 1 and mission pad 3 is table 2. It connects to the local MQTT broker and publishes a JSON event showing the table that is in use. After finding the specific table it ends its side to side search motion, returns to the center, retreats and lands. The specific code can be found in the drone repository under Drone table detection.py.
+
+#### Challenges
+
+The Tello drone comes with an array of challenges we had to learn to deal with. The drones battery life is a very limiting factor when it comes to its use. To be able to use it properly we have to use it only for a short duration so that the battery does not run empty. It has an in flight battery life of about 5-8 minutes which means it can't stay in the air for long. Another challenge that came with the drone was its tendency to overheat from being om and ready. The drone can be on and not moving but it will heat up and at a certain point it will be too hot to take off. Another challenge that we had to face was the fact that the drones built in stabilizers wouldn't keep it stable in the air.
