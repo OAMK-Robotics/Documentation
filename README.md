@@ -41,7 +41,7 @@ All the robots will communicate through an MQTT broker which is connected to the
 
 We used the Prusa CORE one+ to print our cups and our cup holder. Below you can find the schematics for both.
 
-<img width="542" height="545" alt="glass" src="https://github.com/user-attachments/assets/685459d1-b40d-4fc2-a51d-743164658f6f" />
+<img width="442" height="445" alt="glass" src="https://github.com/user-attachments/assets/685459d1-b40d-4fc2-a51d-743164658f6f" />
 
 ### Software and code
 
