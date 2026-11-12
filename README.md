@@ -50,11 +50,11 @@ The main bulk of the software for the project is written in Python 3.13, this in
 ## Daily meetings and Sprint meetings
 
 ### Daily meetings
-Daily meeting on 05.11.2026:
+Daily meeting 05.11.2026:
 
 [Daily documentation 05.11.pdf](https://github.com/user-attachments/files/34420031/Daily.documentation.05.11.pdf)
 
-Daily meeting on 06.11.2026:
+Daily meeting 06.11.2026:
 
 [Daily documentation 06.11.pdf](https://github.com/user-attachments/files/34469637/Daily.documentation.06.11.pdf)
 
