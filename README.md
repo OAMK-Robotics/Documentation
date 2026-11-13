@@ -79,6 +79,10 @@ Sprint review 09.11.2026:
 
 [Sprint review 09.11.2026.pdf](https://github.com/user-attachments/files/34568503/Sprint.review.09.11.2026.pdf)
 
+Sprint review 13.11.2026:
+
+[Sprint review documentation 13.11.2026.pdf](https://github.com/user-attachments/files/34800433/Sprint.review.documentation.13.11.2026.pdf)
+
 ### Sprint plannings
 
 Sprint planning 09.11.2026:
