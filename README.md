@@ -102,9 +102,21 @@ Sprint planning 16.11.2026:
 
 ### UR
 
+#### Code / function
+
+#### Challenges
+
 ### GoPiGo
 
+#### Code / function
+
+#### Challenges
+
 ### NAO
+
+#### Code / function
+
+#### Challenges
 
 ### Tello drone
 
