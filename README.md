@@ -72,6 +72,8 @@ Daily meeting 12.11.2026:
 
 [Daily documentation 12.11.2026.pdf](https://github.com/user-attachments/files/34737823/Daily.documentation.12.11.2026.pdf)
 
+Daily meeting 17.11.2026:[Daily Documentation 17.11.2026.pdf](https://github.com/user-attachments/files/34959850/Daily.Documentation.17.11.2026.pdf)
+
 
 ### Sprint reviews
 
