@@ -49,6 +49,13 @@ We used the Prusa CORE one+ to print our cups and our cup holder. Below you can 
 
 The main bulk of the software for the project is written in Python 3.13, this includes: the drone table detection, Nao's communication, the GoPiGo's navigation and all the communication with the MQTT broker. The movements of the UR are designed in its proprietary software but the connection with the rest of robots was established in python. Nao is an edge case because Nao's code is written in Python 2.7 but through a flask server the communication with Nao through Python 3.13 is made possible.
 
+### Final order of execution
+
+Below you can find a more detailed flow diagram showing the final order of execution for the project demo.
+
+[Flow Diagram (detailed).pdf](https://github.com/user-attachments/files/35016964/Flow.Diagram.detailed.pdf)
+
+
 ## Daily meetings and Sprint meetings
 
 ### Daily meetings
@@ -75,6 +82,10 @@ Daily meeting 12.11.2026:
 Daily meeting 17.11.2026:
 
 [Daily Documentation 17.11.2026.pdf](https://github.com/user-attachments/files/34959850/Daily.Documentation.17.11.2026.pdf)
+
+Daily meeting 18.11.2026:
+
+[Daily Documentation 18.11.2026.pdf](https://github.com/user-attachments/files/35017041/Daily.Documentation.18.11.2026.pdf)
 
 
 ### Sprint reviews
