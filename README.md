@@ -8,7 +8,7 @@ NAO: Antti, Kalle, Simon
 
 Drone: Amila, Josh
 
-GoPiGo: Annina, Ben, Boris
+GoPiGo: Anniina, Ben, Boris
 
 UR: Samuel, Rasanjula, Ed
 
@@ -86,6 +86,8 @@ Daily meeting 17.11.2026:
 Daily meeting 18.11.2026:
 
 [Daily Documentation 18.11.2026.pdf](https://github.com/user-attachments/files/35017041/Daily.Documentation.18.11.2026.pdf)
+
+Daily meeting 19.11.2026:
 
 
 ### Sprint reviews
