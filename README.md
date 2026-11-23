@@ -117,6 +117,10 @@ Sprint planning 16.11.2026:
 
 [Sprint planning 16.11.2026.pdf](https://github.com/user-attachments/files/34904276/Sprint.planning.16.11.2026.pdf)
 
+Sprint planning 23.11.2026:
+
+[Sprint planning 23.11.2026.pdf](https://github.com/user-attachments/files/35265935/Sprint.planning.23.11.2026.pdf)
+
 
 ## Individual robot functionalities
 
