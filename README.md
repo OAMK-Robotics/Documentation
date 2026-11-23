@@ -37,6 +37,11 @@ All the robots will communicate through an MQTT broker which is connected to the
 
 [mqtt_schema.pdf](https://github.com/user-attachments/files/34471134/mqtt_schema.pdf)
 
+The broker was later uploaded into a docker file and made usable without the specific end user device. Below you can find the brief on the MQTT configuration with the docker.
+
+[mqtt_brief (1).pdf](https://github.com/user-attachments/files/35267728/mqtt_brief.1.pdf)
+
+
 ### 3D Printing
 
 We used the Prusa CORE one+ to print our cups and our cup holder. Below you can find the schematics for both.
