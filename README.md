@@ -131,9 +131,23 @@ Sprint planning 23.11.2026:
 
 ### UR
 
-#### Code / function
+The UR is responsible for preparing and loading the drinks within the robot bar. It fills the cup and places it in the cup holder atop the GoPiGo. It also retrieves the empty cup from the GoPiGo once it is returned.
+
+#### Code for the motions
+
+The code for the motions is divided into 5 different programs: Pouring left.urp, Pouring middle.urp, Pouring right.urp, loading.urp and pickup.urp. Pouring left.urp prepares the drink in the left dispenser. Pouring middle.urp prepares the drink in the middle dispenser. Pouring right.urp prepares the drink in the right dispenser. loading.urp places the filled cup onto the GoPiGo. pickup.urp removes the empty cup from the GoPiGo.
+
+#### Remote control code
+
+The robot is connected to a laptop via ethernet. A python script on this laptop allows the robot to be controlled remotely, using socket communication and the UR dashboard's server on port 29999.
+
+#### MQTT communication code
+
+Through the Paho MQTT library in python the UR sends and receives MQTT messages. The controller chooses a pouring program based on the incoming command.
 
 #### Challenges
+
+The first challenge arose in finding a suitable position for the cup and the three dispensers. The position had to be within the robot's reach and it had to be reachable within the robots range of motion. The biggest challenge was loading and unloading the cups on the GoPiGo due to the cup holder having very little free space and thus requiring a very precise motion. 
 
 ### GoPiGo
 
