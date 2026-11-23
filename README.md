@@ -66,11 +66,11 @@ Below you can find a more detailed flow diagram showing the final order of execu
 ### Daily meetings
 Daily meeting 05.11.2026:
 
-[Daily documentation 05.11.pdf](https://github.com/user-attachments/files/34420031/Daily.documentation.05.11.pdf)
+[Daily documentation 05.11.2026pdf](https://github.com/user-attachments/files/34420031/Daily.documentation.05.11.pdf)
 
 Daily meeting 06.11.2026:
 
-[Daily documentation 06.11.pdf](https://github.com/user-attachments/files/34469637/Daily.documentation.06.11.pdf)
+[Daily documentation 06.11.2026pdf](https://github.com/user-attachments/files/34469637/Daily.documentation.06.11.pdf)
 
 Daily meeting 10.11.2026:
 
