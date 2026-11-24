@@ -6,11 +6,11 @@ In this space we will be keeping all the documentation across the entire robotic
 
 NAO: Antti, Kalle, Simon
 
-Drone: Amila, Josh
+Drone: Amila, Joshua
 
 GoPiGo: Anniina, Ben, Boris
 
-UR: Samuel, Rasanjula, Ed
+UR: Samuel, Rasanjula, Eetu
 
 ## First ideas and diagrams
 In our first meeting we were tasked with coming up with mind maps for the individual robots and their functionalities:
