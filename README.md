@@ -56,7 +56,7 @@ The main bulk of the software for the project is written in Python 3.13, this in
 
 ### Final order of execution
 
-Below you can find a more detailed flow diagram showing the final order of execution for the project demo.
+Below you can find a more detailed flow diagram showing the final order of execution for the project demo. This contains the individual tasks of each robot and in which order they're carried out.
 
 [Flow Diagram (detailed).pdf](https://github.com/user-attachments/files/35016964/Flow.Diagram.detailed.pdf)
 
@@ -176,6 +176,10 @@ In short this script configures the drone to leave its own WIFI and connect to t
 #### Detection Code
 
 The detection code is a Python application that controls the Tello drone on order to search for customers sitting at tables in the bar. It uses the drones mission pads to represent the tables, mission pad 1 is table 1 and mission pad 3 is table 2. It connects to the local MQTT broker and publishes a JSON event showing the table that is in use. After finding the specific table it ends its side to side search motion, returns to the center, retreats and lands. The specific code can be found in the drone repository under Drone table detection.py.
+
+#### Raspberry Pi
+
+We decided to use a Raspberry Pi with a headless Linux system in order to start the drone's software with the push of a button. We uploaded all the relevant code onto the Raspberry Pi along with a python script that allows the button push to send an MQTT publish for the drone's table detection software to execute. The Raspberry Pi also includes the MQTT configuration file for the drone. 
 
 #### Challenges
 
