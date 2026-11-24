@@ -195,9 +195,47 @@ Combining the different functionalities has also required careful coordination. 
 
 ### NAO
 
-#### Code / function
+The NAO robot is responsible for customer interaction and order-taking. Its primary purpose is to receive drink orders through voice communication, process the spoken information with the help of an external AI system and provide an appropriate verbal response to the customer. NAO acts as the main interface between the customer and the automated drink preparation process. Once an order has been identified, the corresponding information is transmitted through the MQTT infrastructure so that the UR robot can prepare the requested drink.
+
+Initially, we planned to implement a movement function that would allow NAO to walk towards the table identified by the Tello drone. However, during development, we decided against this approach because NAO's walking movements were relatively noisy, slow and difficult to integrate reliably into the overall process. Instead, NAO will be positioned between the two customer tables, allowing it to interact with customers from a fixed location. This approach reduces the complexity of the system and avoids unnecessary movement-related problems.
+
+NAO is programmed using Choregraphe and Python 2.7. The main functionality is implemented through the robot's built-in NAOqi modules, including ALTextToSpeech, ALAudioRecorder and ALAudioPlayer. These modules allow NAO to speak to customers, record their voices and play back audio files. The current Get Order script begins by asking the customer for their order before recording approximately three seconds of audio. The recording is stored locally as a WAV file with a sampling rate of 16 kHz.
+
+#### Speech recognition and AI integration
+
+For the initial implementation, we selected Google's Gemini AI to recognise and interpret customer orders. The Flask backend sends the recorded audio to Gemini together with instructions describing NAO's role as a robot waiter. The AI is instructed to recognise the customer's speech, identify the requested drink and generate a short, professional response. Since the robot bar currently offers three different drinks, the system uses predefined drink IDs: beer (1), soda (2) and wine (3). These IDs allow the recognised order to be communicated to the other robotic components without transferring the entire conversation.
+
+Although Gemini provides a functional solution for processing customer orders, we identified its complexity and processing time as potential limitations. Since our application only needs to recognise a small number of predefined drinks, a large language model may offer more functionality than necessary. Therefore, we began investigating OpenAI's Whisper as an alternative speech recognition system. In the proposed implementation, Whisper transcribes the recorded audio, while a separate Python function searches for the corresponding drink keywords and assigns the correct drink ID. This could simplify order processing and potentially improve response times, although the actual performance still needs to be evaluated.
+
+The decision to replace Gemini with Whisper depends on the results of further testing and the remaining development time. Gemini will remain the primary implementation if Whisper does not provide sufficient improvements or if integrating the alternative would introduce unnecessary risks before the project deadline.
+
+#### MQTT communication and backend
+
+MQTT is used as the communication infrastructure connecting the different components of the robot bar. The system follows a publish-subscribe architecture, in which the individual robotic systems exchange messages through a central MQTT broker. For our project, we established a Mosquitto MQTT broker on a virtual machine. Tailscale is used to support the network connectivity required for communication between the participating devices and software components.
+
+Our NAO team is responsible for connecting NAO's customer interaction functionality to the MQTT communication system. Instead of establishing a direct MQTT connection from NAO, we implemented a Flask backend that acts as an intermediary between the robot and the broker. This approach allows us to use modern Python libraries for MQTT communication and AI processing while maintaining compatibility with NAO's older Python 2.7 environment.
+
+#### Flask Backend and MQTT Bridge
+
+The backend is implemented in Python using Flask, the Paho MQTT library and additional libraries for processing audio recordings and AI responses. It communicates with the MQTT broker through predefined topics and subscribes to the messages published by the Tello drone. When the drone detects an occupied table, it publishes the corresponding table information through MQTT. The backend receives this information and temporarily stores incoming messages in a queue, allowing NAO to retrieve them through a separate HTTP connection.
+
+The Flask backend provides two main endpoints for communicating with NAO. The GET /messages endpoint allows the robot to check whether new MQTT messages have arrived, while the POST /audio endpoint receives the recorded customer speech. The latter validates and stores the WAV recording before forwarding it to the selected speech processing system. Once the customer's order has been identified, the backend publishes the corresponding drink ID to the configured MQTT topic. The UR controller can then use this information to select the appropriate drink preparation program. Both HTTP endpoints use an authentication token to restrict unauthorised access.
+
+#### MQTT Listener
+
+The MQTT Listener is implemented as a separate Python script within NAO's Choregraphe environment. Its purpose is to retrieve messages from the Flask backend and make the received information available to NAO's behaviour system. The script periodically checks the backend's /messages endpoint, using an interval of approximately two seconds, and places incoming messages into a local queue. Separate threads are used for checking the backend and processing the received messages, reducing the risk of blocking other operations while the robot is waiting for new information.
+
+The intended workflow is that a table-detection message from the drone triggers NAO's order-taking behaviour. After receiving the corresponding information through the Flask backend, NAO can start the customer interaction and record the requested drink. The recorded audio is subsequently processed by the backend, which publishes the resulting drink ID to MQTT. This provides the connection between customer interaction and the UR robot's drink preparation process. The individual communication components have been developed, while their complete integration into the automated workflow remains part of the ongoing project work.
 
 #### Challenges
+
+One of our first challenges was becoming familiar with NAO and its programming environment. Since we had only a limited amount of time to learn how to use the robot before starting the project, implementing the required functionality involved considerable experimentation. We needed to understand how Choregraphe, NAO's Python 2.7 environment and its built-in audio modules work together. Even comparatively simple tasks, such as recording audio and transferring it to another computer, required additional research and testing because we had limited previous experience with these technologies.
+
+The biggest technical challenge was establishing reliable network communication between NAO, the Flask backend and the MQTT infrastructure. During development, we encountered connectivity problems related to the university network, including difficulties with IP addresses and communication between devices. We also needed to establish a working backend environment that could communicate with NAO, access the necessary AI services and exchange information through MQTT. To address these issues, we worked towards a more reliable network architecture using a virtual machine, Mosquitto and Tailscale. This required repeated configuration changes, debugging and adaptation of our original technical approach.
+
+Another significant challenge involved the reliability of the speech recognition process. We had to ensure that NAO could successfully record the customer's voice, transfer the audio file to the backend and receive a suitable response. During the earlier stages of development, several problems occurred while recording, transmitting and processing audio. Even after establishing basic communication, we needed to adjust the AI instructions and response handling to ensure that the system could correctly identify the supported drink orders.
+
+Time management also became an important challenge throughout the project. Several tasks required more development time than initially expected, which resulted in unfinished work being transferred between iterations. Since we were working with multiple unfamiliar technologies, we frequently relied on documentation, experimentation, AI-assisted programming and extensive debugging to make progress. Although this approach helped us develop working solutions within a limited timeframe, it also required additional testing to verify the generated code and ensure reliable integration between components.
 
 ### Tello drone
 
