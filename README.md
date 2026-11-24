@@ -155,9 +155,43 @@ The first challenge arose in finding a suitable position for the cup and the thr
 
 ### GoPiGo
 
-#### Code / function
+The GoPiGo is responsible for transporting the prepared drinks from the robot bar to the correct table and returning to the starting position. It uses a line-following system to navigate along a predefined track and sensors to detect obstacles and monitor the cup during transportation. 
+
+#### Navigation 
+
+The navigation functionality is implemented in Python using the EasyGoPiGo3 library. The GoPiGo starts its journey next to the UR arm, follows black lines on the tables using a linefollowing sensor and proportional control, and returns to the same starting position after completing a delivery.
+
+At the junction, the robot determines which of the two tables to navigate to based on the table ID and predefined table route. The modified T-junction layout allows it to detect the endpoint of the main line through an all-white sensor reading. It then performs a predefined 45 or -45 degree turn using the turn_degrees() function and searches for the separate black line leading to the selected table.
+
+The original Y-junction design caused difficulties because proportional control could unintentionally steer the robot towards the left branch. Separating the lines with a small white gap and using predefined turns made junction detection and route selection more reliable. 
+
+#### Obstacle detection 
+
+The GoPiGo uses an I2C distance sensor to detect obstacles in front of the robot. When an obstacle is detected within the defined safety distance, the robot stops and activates a buzzer to indicate the situation. The robot then performs a recovery manoeuvre before attempting to continue its navigation. 
+
+#### Cup monitoring 
+
+An ultrasonic sensor is used to monitor whether the cup remains in its holder during transportation. The system measures the distance to the cup and compares the readings against a calibrated baseline. When the cup is detected as removed, the monitoring system triggers a callback that publishes a drink-delivered event through MQTT. 
+
+#### MQTT communication
+
+The GoPiGo communicates with the other robots through the MQTT broker using the Paho MQTT Python library. It subscribes to messages from the UR robot to receive information about prepared drinks and publishes its own status and event messages.
+
+This allows the GoPiGo to communicate its availability, delivery progress and completed deliveries to the rest of the system.
+
+#### Main program and threading
+
+The main program initializes the robot, sensors and MQTT client. It starts two separate threads: one for navigation and another for MQTT communication with the broker.
+
+The navigation thread handles line following, obstacle detection and cup monitoring by calling their respective functions. The MQTT thread maintains the broker connection and handles incoming and outgoing messages. This allows navigation and MQTT communication to operate concurrently. 
 
 #### Challenges
+
+One of the main challenges has been achieving reliable navigation around junctions. The original Y-junction design caused difficulties because proportional control could unintentionally steer the robot towards the left branch. Modifying the track and introducing predefined turns made navigation more predictable.
+
+Another challenge has been I2C communication. Both the line-following sensor and the distance sensor use the same I2C bus, and reading both sensors concurrently appeared to cause intermittent I2C I/O communication errors.
+
+Combining the different functionalities has also required careful coordination. Navigation, obstacle detection and cup monitoring need to operate without interfering with each other. 
 
 ### NAO
 
