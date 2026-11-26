@@ -171,7 +171,7 @@ The decision to replace Gemini with Whisper depends on the results of further te
 
 #### MQTT communication and backend
 
-MQTT is used as the communication infrastructure connecting the different components of the robot bar. The system follows a publish-subscribe architecture, in which the individual robotic systems exchange messages through a central MQTT broker. For our project, we established a Mosquitto MQTT broker on a virtual machine. Tailscale is used to support the network connectivity required for communication between the participating devices and software components.
+MQTT is used as the communication infrastructure connecting the different components of the robot bar. The system follows a publish-subscribe architecture, in which the individual robotic systems exchange messages through a central MQTT broker. For our project, we established a Mosquitto MQTT broker on a virtual machine. Tailscale is used to support the network connectivity required for communication between the NAO and the backend.
 
 Our NAO team is responsible for connecting NAO's customer interaction functionality to the MQTT communication system. Instead of establishing a direct MQTT connection from NAO, we implemented a Flask backend that acts as an intermediary between the robot and the broker. This approach allows us to use modern Python libraries for MQTT communication and AI processing while maintaining compatibility with NAO's older Python 2.7 environment.
 
